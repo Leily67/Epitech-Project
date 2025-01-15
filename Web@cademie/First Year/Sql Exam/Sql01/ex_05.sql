@@ -1,0 +1,1 @@
+SELECT title AS `Titre des 12 premiers films` FROM movie ORDER BY id ASC LIMIT 12;
