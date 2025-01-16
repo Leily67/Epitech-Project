@@ -1,7 +1,7 @@
 # EPITECH Projects
 
 <p align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Epitech_Official_Logo.png" alt="Logo" width="400" height="150"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Epitech_Official_Logo.png" alt="Logo" width="600" height="150"/>
 </p>
 
 ## Table of Contents
