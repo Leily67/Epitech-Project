@@ -1,0 +1,1 @@
+SELECT count(*) as "Nombre de films" FROM movie;
