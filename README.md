@@ -12,8 +12,8 @@
 
 | Project Folder                    | Language/Technos | Description |
 | --------------------------------  | - | -------------- |
-| [PHP Pool](./First Year/Piscine PHP) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Sheel and PHP basics. |
-| [SQL Exam](./First Year/Sql Exam) | MySQL | Mini exam in SQL <br> Exercises designed to assess SQL query skills and database management concepts. |
+| [PHP Pool](./First%20Year/Piscine%20PHP) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Sheel and PHP basics. |
+| [SQL Exam](./First%20Year/Sql%20Exam) | MySQL | Mini exam in SQL <br> Exercises designed to assess SQL query skills and database management concepts. |
 <br>
 
 ## Web@cademie Second Year
