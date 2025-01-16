@@ -1,1 +1,1 @@
-SELECT DATE_FORMAT(CURDATE(), '%Y-%m-%d') AS `Aujourd'hui`;
+SELECT DATE_FORMAT(CURDATE(), '%Y-%m-%d') AS "Aujourd'hui";

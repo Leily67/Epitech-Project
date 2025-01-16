@@ -1,3 +1,3 @@
-SELECT id AS `Identifiant`
+SELECT id AS 'Identifiant'
 FROM movie
 WHERE LOWER(title) LIKE '%hell%';

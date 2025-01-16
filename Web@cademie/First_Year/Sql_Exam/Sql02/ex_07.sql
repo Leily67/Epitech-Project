@@ -1,5 +1,5 @@
 SELECT 
-    COUNT(*) AS 'Nombre de films commencant par “Mo”'
+    COUNT(*) AS 'Nombre de films commencant par "Mo"'
 FROM 
     movie
 WHERE 

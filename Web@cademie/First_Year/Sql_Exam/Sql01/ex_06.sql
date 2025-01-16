@@ -1,1 +1,1 @@
-SELECT COUNT(*) * 3 AS `3 fois le nombre total de salles` FROM room;
+SELECT COUNT(*) * 3 AS '3 fois le nombre total de salles' FROM room;
