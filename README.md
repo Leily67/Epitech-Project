@@ -1,6 +1,8 @@
 # EPITECH Projects
 
-![Logo](https://i.ibb.co/3zZht7D/EPI-LOGO-ACCROCHE-2023-QUADRI.png)
+<p align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Epitech_Official_Logo.png" alt="Logo" width="400" height="150"/>
+</p>
 
 ## Table of Contents
 
