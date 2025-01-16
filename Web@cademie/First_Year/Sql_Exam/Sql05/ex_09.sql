@@ -1,6 +1,6 @@
 SELECT 
-    title AS "title",
-    duration AS "duration"
+    title AS "Titre",
+    duration AS "Durée"
 FROM 
     movie
 ORDER BY 
