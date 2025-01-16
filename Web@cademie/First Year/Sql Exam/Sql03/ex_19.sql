@@ -1,0 +1,1 @@
+select s.name as "nom", count(*) as "nombre d'abonées" from subscription  s inner join membership m on s.id = m.id_subscription group by s.name;
