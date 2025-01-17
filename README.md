@@ -3,6 +3,13 @@
 <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Epitech_Official_Logo.png" alt="Logo" width="600" height="150"/>
 </p>
+<p>Here are some of the projects I did during my studies at Epitech.<br></p>
+
+| Cursus | Promotion     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Web@cademie`      | `2023` | Integrator & Web Developer |
+| `MSc Pro`      | `2026` | Master of Science Digital Transformation |
+
 
 ## Table of Contents
   - [Web@cademie First Year](#webcademie-first-year)
