@@ -1,0 +1,38 @@
+/* Police par défaut */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* Style des labels */
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+/* Champs cliquables */
+label:hover {
+  cursor: pointer;
+}
+
+/* Un champ sur trois */
+input:nth-of-type(3n),
+select:nth-of-type(3n) {
+  border: 2px dashed blue;
+}
+
+/* Animation au survol */
+input:hover,
+button:hover,
+select:hover {
+  background-color: lightgray;
+}
+
+/* Bouton valider */
+input[type="submit"] {
+  box-shadow: 0 5px black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}

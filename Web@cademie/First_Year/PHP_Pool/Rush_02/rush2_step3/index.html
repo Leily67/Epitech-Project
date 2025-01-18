@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tar Web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Create Archive</h1>
+      <form id="archiveForm">
+        <input
+          type="text"
+          id="archiveName"
+          placeholder="Archive Name"
+          required
+        />
+        <input type="file" id="fileInput" multiple />
+        <ul id="fileList"></ul>
+        <button type="button" id="generateArchive">Generate Archive</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

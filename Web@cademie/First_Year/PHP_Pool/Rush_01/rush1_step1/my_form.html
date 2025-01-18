@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire d'inscription</title>
+  </head>
+  <body>
+    <form action="my_form.html" method="POST">
+      <label for="sexe_homme">Sexe :</label>
+      <input type="radio" id="sexe_homme" name="sexe" value="Homme" /> Homme
+      <input type="radio" id="sexe_femme" name="sexe" value="Femme" /> Femme
+      <input type="radio" id="sexe_autre" name="sexe" value="Autre" /> Autre
+      <br /><br />
+
+      <label for="civilite">Civilité :</label>
+      <select id="civilite" name="civilite">
+        <option value="M.">M.</option>
+        <option value="Mme.">Mme.</option>
+      </select>
+      <br /><br />
+
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required pattern="[A-Za-z]{2,}" />
+      <br /><br />
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required />
+      <br /><br />
+
+      <label for="telephone">Téléphone :</label>
+      <input type="tel" id="telephone" name="telephone" required />
+      <br /><br />
+
+      <label for="website">Site Web :</label>
+      <input type="url" id="website" name="website" required />
+      <br /><br />
+
+      <label for="date_naissance">Date de naissance :</label>
+      <input type="date" id="date_naissance" name="date_naissance" required />
+      <br /><br />
+
+      <label>Hobbies :</label>
+      <input
+        type="checkbox"
+        id="jeux_video"
+        name="hobbies[]"
+        value="Jeux video"
+      />
+      Jeux video
+      <input type="checkbox" id="cinema" name="hobbies[]" value="Cinema" />
+      Cinema
+      <input type="checkbox" id="lecture" name="hobbies[]" value="Lecture" />
+      Lecture
+      <input type="checkbox" id="sport" name="hobbies[]" value="Sport" /> Sport
+      <input
+        type="checkbox"
+        id="informatique"
+        name="hobbies[]"
+        value="Informatique"
+      />
+      Informatique <br /><br />
+
+      <input type="hidden" name="token" value="my first website" />
+      <input type="submit" value="Valider" />
+    </form>
+  </body>
+</html>
