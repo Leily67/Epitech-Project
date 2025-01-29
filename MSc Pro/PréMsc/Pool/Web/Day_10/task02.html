@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Email Validation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="emailForm">
+            <div class="formGroup">
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter the email" required>
+            </div>
+            <button type="submit">Click</button>
+        </form>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('emailInput').value;
+            
+            try {
+                let response = await fetch('task02.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'email=' + encodeURIComponent(email)
+                });
+                
+                let data = await response.json();
+                
+                if (data.isValid) {
+                    alert("Email is valid.");
+                } else {
+                    alert("Email is not valid.");
+                }
+            } catch (error) {
+                alert("An error occurred: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

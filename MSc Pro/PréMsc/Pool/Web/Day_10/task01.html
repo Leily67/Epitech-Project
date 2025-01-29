@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="nameForm">
+            <div class="formGroup">
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter the name">
+            </div>
+            <button id="nameButton" type="button" onclick="submitForm()">Click</button>
+        </form>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        async function submitForm() {
+            const name = document.getElementById('nameInput').value;
+        
+            try {
+                let response = await fetch(`task01.php?name=${name}`);
+            
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+            
+                let data = await response.json();
+            
+                if (data.name) {
+                    alert(`Name is: ${data.name}`);
+                } else if (data.error) {
+                    alert(`Error: ${data.error}`);
+                }
+            } catch (error) {
+                alert("An error occurred: " + error.message);
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CodingPedia</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='codingpedia.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="moving_square"></div>
+    <header class="box">
+        <h1>Welcome to CodingPedia!</h1>
+            <nav class="box">
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="php.html">PHP</a></li>
+                    <li><a href="sql.html">SQL</a></li>
+                </ul>
+            </nav>
+    </header>
+    <div class="container">
+    <main class="box"><p>CodingPedia is a collective encyclopedia project on the Internet aiming to be universaland multi-lingual which functions as a wiki. <br>CodingPedia has for goal to offer freely reusable objective and verifiable content that anyone can modify and improve.</p>
+        <article>
+            <h2>Form</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+        
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required><br><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="3" max="99"><br><br>
+        
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" maxlength="10"><br><br>
+        
+                <label>Sex:</label>
+                <input type="radio" id="male" name="sex" value="male" checked>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Female</label><br><br>
+        
+                <label for="hair_color">Hair Color:</label>
+                <input type="color" id="hair_color" name="hair_color"><br><br>
+        
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required><br><br>
+        
+                <label for="technology">Technology:</label>
+                <select id="technology" name="technology">
+                    <option value="PHP">PHP</option>
+                    <option value="SQL">SQL</option>
+                </select><br><br>
+        
+                <label for="question">Question:</label><br>
+                <textarea id="question" name="question" rows="4" required></textarea><br><br>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </article>
+    </main>
+    <aside class="box"><p>Hello Coin-Coin</p></aside></div>
+
+    <footer class="box">
+        <address>
+            Bob - CoinCoin - 4 rue de l'etang - 87687687686
+        </address>
+    </footer>
+</body>
+</html>

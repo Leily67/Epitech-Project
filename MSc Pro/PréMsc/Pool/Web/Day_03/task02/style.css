@@ -1,0 +1,43 @@
+@media (max-width: 767px){
+
+
+    header {
+        background-color: rgb(70, 185, 231);
+        height: 10vh;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section {
+        flex-grow: 1;
+    }
+
+    .section-green {
+        background-color: rgb(101, 242, 101);
+        height: calc(25vh - 20px);
+        margin-bottom: 20px;
+    }
+
+    .yellow {
+        background-color: rgb(246, 246, 101);
+        height: calc(25vh - 20px);
+        margin-bottom: 20px;
+    }
+
+    footer {
+        background-color: rgb(233, 42, 42);
+        height: 10vh;
+    }
+
+    .tab {
+        display: none;
+    }
+    .dest {
+        display: none;
+    }
+    
+}

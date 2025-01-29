@@ -1,0 +1,63 @@
+body {
+    background-color: grey;
+}
+
+.box {
+    background-color: white;
+    border: 2px solid black;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+main {
+    flex: 80
+}
+
+aside {
+    flex: 20;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.moving_square {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    animation-name: moveCycle;
+    animation-duration: 5s;
+    animation-iteration-count: 5;
+}
+
+@keyframes moveCycle {
+    0%, 100% {
+        top: 0;
+        left: 0;
+        background-color: red;
+    }
+    25% {
+        top: 300px;
+        left: 0;
+        background-color: green;
+    }
+    50% {
+        top: 300px;
+        left: 300px;
+        background-color: blue;
+    }
+    75% {
+        top: 0;
+        left: 300px;
+        background-color: yellow;
+    }
+}
+
+
