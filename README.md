@@ -22,6 +22,14 @@
 | --------------------------------  | - | -------------- |
 | [PHP Pool](./Web@cademie/First_Year/PHP_Pool) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Sheel and PHP basics. |
 | [SQL Exam](./Web@cademie/First_Year/Sql_Exam) | MySQL | Mini exam in SQL <br> Exercises designed to assess SQL query skills and database management concepts. |
+| [BattleShip] | / | soon... |
+| [Cinema] | / | soon... |
+| [Meetic] | / | soon... |
+| [RacingJS] | / | soon... |
+| [Puissance 4] | / | soon... |
+| [Spotify] | / | soon... |
+| [Tweet Academy] | /| soon... |
+| [Wysiwyg] | / | soon... |
 <br>
 
 ## Web@cademie Second Year
