@@ -1,0 +1,84 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7.0.8-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    networks:
+      - poll-tier
+      - back-tier
+
+  db:
+    image: postgres:9.4
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - '5432:5432'
+    networks:
+      - result-tier
+      - back-tier
+
+  poll:
+    build: ./poll
+    container_name: poll
+    restart: always
+    environment:
+      REDIS_HOST: redis
+    ports:
+      - '5000:80'
+    networks:
+      - poll-tier
+    depends_on:
+      - redis
+  backend:
+    build:
+      context: ./worker
+      target: builder
+
+  worker:
+    build:
+      context: ./worker
+      target: run
+    container_name: worker
+    restart: always
+    environment:
+      REDIS_HOST: redis
+      DATABASE_HOST: db
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    networks:
+      - back-tier
+    depends_on:
+      - redis
+      - db
+
+  result:
+    build: ./result
+    container_name: result
+    restart: always
+    environment:
+      REDIS_HOST: redis
+    ports:
+      - '5001:80'
+    networks:
+      - result-tier
+    depends_on:
+      - db
+
+networks:
+  poll-tier:
+  result-tier:
+  back-tier:
+
+volumes:
+  db-data:
