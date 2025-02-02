@@ -1,0 +1,22 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+    padding: 1em;
+    border: solid black;
+}
+
+.error {
+    flex: 1;
+    padding: 1em;
+}
