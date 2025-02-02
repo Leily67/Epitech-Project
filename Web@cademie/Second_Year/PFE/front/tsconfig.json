@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base",
+  "types": [
+    "@types/react-navigation"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@react-navigation/*": ["node_modules/@react-navigation/*"]
+    },
+    "strict": true,
+  }
+}
