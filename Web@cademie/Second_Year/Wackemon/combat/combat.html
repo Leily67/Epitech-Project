@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakemon</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="button_container">
+        <input type="button" value="Accéder à l'accueil" onclick="window.location.href = '../home.html';" class="button">
+        <input type="button" value="Accéder au pokedex" onclick="window.location.href = '../pokedex/pokedex.html';" class="button">
+    </div>
+    <div class="battle-container">
+        <div class="pokemon-info" id="player-info">
+            <h2>Your Pokemon</h2>
+            <p id="player-name"></p>
+            <p id="player-hp"></p>
+        </div>
+        <div class="pokemon-info" id="ai-info">
+            <h2>AI's Pokemon</h2>
+            <p id="ai-name"></p>
+            <p id="ai-hp"></p>
+        </div>
+        <button id="attack-button">Attack</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

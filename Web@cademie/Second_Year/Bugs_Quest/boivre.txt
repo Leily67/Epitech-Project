@@ -1,0 +1,13 @@
+
+joueurs/id:
+ -> Choisir une quetes en cours
+ -> Voir les quetes fini
+ -> Commencer une quetes
+
+joueurs/id/stats:
+    -> equiper son stuff
+
+joueurs/id/quests/id
+ reprend le progress ou demande quel option le joueur choisi
+ -> PNJ
+ -> Question

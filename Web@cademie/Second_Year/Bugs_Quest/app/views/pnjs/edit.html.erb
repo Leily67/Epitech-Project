@@ -1,0 +1,19 @@
+<h1>Modifier PNJ</h1>
+
+<%= form_with(model: @pnj, url: pnj_path(@pnj), method: :patch) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :avatar %>
+  <%= form.text_field :avatar %>
+
+  <%= form.label :vie %>
+  <%= form.number_field :vie %>
+
+  <%= form.label :force %>
+  <%= form.number_field :force %>
+
+  <%= form.submit 'Mettre à jour PNJ' %>
+
+  <%= button_to 'Retour à la liste des PNJ', pnjs_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

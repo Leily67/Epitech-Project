@@ -1,0 +1,12 @@
+<h1>Détails Items</h1>
+
+<p>Nom : <%= @objet.name %></p>
+<p>Avatar : <%= @objet.avatar %></p>
+<p>Type : <%= @objet.obj_type %></p>
+<p>Vie : <%= @objet.vie %></p>
+<p>Force : <%= @objet.force %></p>
+<p>XP : <%= @objet.xp %></p>
+
+<%= button_to 'Retour à la liste des Items', objets_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Retour à la création des Items', new_objet_path, method: :get, class: 'btn btn-primary' %>
+

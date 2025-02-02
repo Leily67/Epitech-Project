@@ -1,0 +1,21 @@
+<h1>Nouvelle Etape</h1>
+
+<%= form_with(model:[@quest, @etape], url: quest_etapes_path) do |form| %>
+  <%= form.label :Question %>
+  <%= form.text_field :question %>
+
+  <%= form.label :Choix %>
+  <%= form.text_field :choix %>
+
+  <%= form.label :pnj_id, 'pnj' %>
+  <%= form.select :pnj_id, @pnjs.map { |pnj| [ pnj.name, pnj.id ] } %>
+
+  <%= form.label :Reponse %>
+  <%= form.text_field :reponse %>
+
+  <%= form.hidden_field :quest_id %>
+  <%= form.submit 'Créer Etape' %>
+
+<% end %>
+<%= @etape.quest_id %>
+<%= button_to 'Retour à la liste des Etape', quest_path(@etape.quest), method: :get, class: 'btn btn-primary' %>

@@ -1,0 +1,29 @@
+<h1>Liste des PNJs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Avatar</th>
+      <th>Vie</th>
+      <th>Force</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pnjs.each do |pnj| %>
+      <tr>
+        <td><%= pnj.name %></td>
+        <td><%= pnj.avatar %></td>
+        <td><%= pnj.vie %></td>
+        <td><%= pnj.force %></td>
+        <td><%= button_to 'Afficher', pnj, method: :get %></td>
+        <td><%= button_to 'Modifier', edit_pnj_path(pnj), method: :get %></td>
+        <td><%= button_to 'Supprimer', pnj, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to 'Nouveau PNJ', new_pnj_path, method: :get %>
+<%= button_to 'Retour accueil', home_path, method: :get %>

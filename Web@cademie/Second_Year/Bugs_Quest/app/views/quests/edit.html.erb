@@ -1,0 +1,10 @@
+<h1>Modifier Quete</h1>
+
+<%= form_with(model: @quest, url: quest_path(@quest), method: :patch) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.submit 'Mettre à jour la quete' %>
+
+  <%= button_to 'Retour à la liste des quetes', quests_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

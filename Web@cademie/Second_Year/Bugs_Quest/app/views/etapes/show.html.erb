@@ -1,0 +1,9 @@
+<h1>Détails de Etape</h1>
+
+<p>Question : <%= @etape.question %></p>
+<p>Choix : <%= @etape.choix %></p>
+<p>Reponse : <%= @etape.reponse %></p>
+
+<%= button_to 'Retour à la liste des Etapes', quest_path(@etape.quest), method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Retour à la création des Etapes', new_quest_etape_path, method: :get, class: 'btn btn-primary' %>
+

@@ -1,0 +1,88 @@
+body{
+    background-color: rgb(235, 227, 207);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+img {
+    width: 1%;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.titre,
+.puce,
+.num,
+.gras,
+.italique,
+.souligner,
+.enregistrer {
+    width: 4%;
+}
+
+textarea {
+    border: 2px solid black !important;
+}
+
+img {
+    width: 25%;
+}
+
+.wysiwyg {
+    text-align: center;
+}
+
+.editor {
+    background-color: white;
+    margin: 0 auto;
+    width: 1000px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.save-options {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}

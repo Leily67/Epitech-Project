@@ -1,0 +1,10 @@
+<h1>Détails du PNJ</h1>
+
+<p>Nom : <%= @pnj.name %></p>
+<p>Avatar : <%= @pnj.avatar %></p>
+<p>Vie : <%= @pnj.vie %></p>
+<p>Force : <%= @pnj.force %></p>
+
+<%= button_to 'Retour à la liste des PNJ', pnjs_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Retour à la création des PNJ', new_pnj_path, method: :get, class: 'btn btn-primary' %>
+

@@ -1,0 +1,19 @@
+<h1>Nouveau PNJ</h1>
+
+<%= form_with(model: @pnj, url: pnjs_path) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :avatar %>
+  <%= form.select :avatar, ['Avatar 1', 'Avatar 2', 'Avatar 3', 'Avatar 4', 'Avatar 5'] %>
+
+  <%= form.label :vie %>
+  <%= form.number_field :vie %>
+
+  <%= form.label :force %>
+  <%= form.number_field :force %>
+
+  <%= form.submit 'Créer PNJ' %>
+
+  <%= button_to 'Retour à la liste des PNJ', pnjs_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

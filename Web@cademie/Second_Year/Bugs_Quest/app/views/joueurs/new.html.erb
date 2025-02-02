@@ -1,0 +1,10 @@
+<h1>Nouveau Joueur</h1>
+
+<%= form_with(model: @joueur, url: joueurs_path) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.submit 'Créer Joueur' %>
+
+  <%= button_to 'Retour à la liste des joueurs', joueurs_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

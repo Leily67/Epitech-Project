@@ -1,0 +1,18 @@
+<h1>Détails Joueur</h1>
+
+<p>Nom : <%= @joueur.name %></p>
+<p>Niveau : <%= @joueur.niveau %></p>
+<p>Force : <%= @joueur.force %></p>
+<p>Vie : <%= @joueur.vie %></p>
+<p>XP : <%= @joueur.xp %></p>
+<p>Mort : <%= @joueur.mort %></p>
+<p>Points : <%= @joueur.points %></p>
+
+<%= button_to 'Attribution points', edit_joueur_path, method: :get, class: 'btn btn-primary' %>
+
+<br>
+<br>
+
+<%= button_to 'Retour à la liste des Joueurs', joueurs_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Retour à la création des Joueurs', new_joueur_path, method: :get, class: 'btn btn-primary' %>
+

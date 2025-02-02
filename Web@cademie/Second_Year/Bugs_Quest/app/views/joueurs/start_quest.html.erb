@@ -1,0 +1,8 @@
+<h1>Commencer la quête</h1>
+
+<p>Bienvenue dans votre quête ! Vous rencontrez le PNJ suivant :</p>
+<p>Nom : <%= @pnj.name %></p>
+<p>Question : <%= @pnj.question %></p>
+
+<%= button_to 'Répondre', joueur_path(@joueur, answer: true), method: :put, class: 'btn btn-primary' %>
+<%= button_to 'Combattre', joueur_path(@joueur, fight: true), method: :put, class: 'btn btn-primary' %>

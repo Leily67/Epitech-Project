@@ -1,0 +1,30 @@
+<h1>Détails des quetes</h1>
+
+<p>Nom : <%= @quest.name %></p>
+
+<h1>Liste des Etapes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>PNJ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @etapes.each do |etape| %>
+      <tr>
+        <td><%= etape.question %></td>
+        <td><%= etape.pnj.name %></td>
+        <td><%= button_to 'Afficher', quest_etape_path(@quest.id, etape.id), method: :get %></td>
+        <td><%= button_to 'Supprimer', quest_etape_path(@quest.id, etape.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= button_to 'Créer etape', new_quest_etape_path(@quest.id), method: :get, class: 'btn btn-primary' %>
+<br>
+<%= button_to 'Retour à la liste des quetes', quests_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Retour à la création des quetes', new_quest_path, method: :get, class: 'btn btn-primary' %>
+

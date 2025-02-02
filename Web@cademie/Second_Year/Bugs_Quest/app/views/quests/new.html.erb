@@ -1,0 +1,10 @@
+<h1>Nouvelle Quete</h1>
+
+<%= form_with(model: @quest, url: quests_path) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.submit 'Créer Quete' %>
+
+  <%= button_to 'Retour à la liste des quetes', quests_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

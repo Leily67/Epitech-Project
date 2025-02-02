@@ -1,0 +1,35 @@
+/* Centrer le titre h1 */
+h1 {
+    text-align: center;
+  }
+  
+  /* Ajouter une bordure au titre h1 */
+  h1 {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  /* Centrer le bouton "Créer ton personnage" */
+  .button-create {
+    text-align: center;
+  }
+  
+  /* Styliser le tableau */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+
+  #avatar-preview {
+    margin-top: 10px;
+    width: 52px; /* Ajustez la taille selon vos besoins */
+    height: 52px; /* Ajustez la taille selon vos besoins */
+    border: 1px solid black;
+  }
+  

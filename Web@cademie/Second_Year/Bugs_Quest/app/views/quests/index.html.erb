@@ -1,0 +1,23 @@
+<h1>Liste des Quetes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @quests.each do |quest| %>
+      <tr>
+        <td><%= quest.name %></td>
+        <td><%= button_to 'Afficher', quest, method: :get %></td>
+        <td><%= button_to 'Modifier', edit_quest_path(quest), method: :get %></td>
+        <td><%= button_to 'Supprimer', quest, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to 'Nouvelle quete', new_quest_path, method: :get %>
+<%= button_to 'Retour accueil', home_path, method: :get %>

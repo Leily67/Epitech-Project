@@ -1,0 +1,16 @@
+<h1>Modifier Etape</h1>
+
+<%= form_with(model: @etape, url: etape_path(@etape), method: :patch) do |form| %>
+  <%= form.label :question %>
+  <%= form.text_field :qestion %>
+
+  <%= form.label :choix %>
+  <%= form.text_field :choix %>
+
+  <%= form.label :reponse %>
+  <%= form.number_field :reponse %>
+
+  <%= form.submit 'Mettre à jour L'etape' %>
+
+  <%= button_to 'Retour à la liste des Etapes', etapes_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

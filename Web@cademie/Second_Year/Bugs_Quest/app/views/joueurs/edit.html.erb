@@ -1,0 +1,17 @@
+<h1>Modifier Joueur</h1>
+
+<%= form_with(model: @joueur, url: joueur_path(@joueur), method: :patch) do |form| %>
+
+  <%= form.label :force %>
+  <%= form.number_field :force %>
+
+  <%= form.label :vie %>
+  <%= form.number_field :vie %>
+
+  <%= form.submit 'Mettre à jour votre personnage' %>
+
+  <%= button_to 'Retour à la liste des personnages', joueurs_path, method: :get, class: 'btn btn-primary' %>
+<% end %>
+
+<h2>Nombre de point à attribuer</h2>
+<%= @joueur.points %>

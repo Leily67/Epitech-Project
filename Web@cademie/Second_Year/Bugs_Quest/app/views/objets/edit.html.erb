@@ -1,0 +1,25 @@
+<h1>Modifier Item</h1>
+
+<%= form_with(model: @objet, url: objet_path(@objet), method: :patch) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :avatar %>
+  <%= form.select :avatar, ['Avatar 1', 'Avatar 2', 'Avatar 3'] %>
+
+  <%= form.label :obj_type, "Type" %>
+  <%= form.select :obj_type, ['Chapeau', 'Arme', 'Bouclier'] %>
+
+  <%= form.label :vie %>
+  <%= form.number_field :vie %>
+
+  <%= form.label :force %>
+  <%= form.number_field :force %>
+
+  <%= form.label :xp %>
+  <%= form.number_field :xp %>
+
+  <%= form.submit 'Mettre à jour votre item' %>
+
+  <%= button_to 'Retour à la liste des items', objets_path, method: :get, class: 'btn btn-primary' %>
+<% end %>

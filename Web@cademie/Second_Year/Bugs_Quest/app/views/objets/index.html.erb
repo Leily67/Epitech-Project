@@ -1,0 +1,33 @@
+<h1>Liste des Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Avatar</th>
+      <th>Type</th>
+      <th>Vie</th>
+      <th>Force</th>
+      <th>XP</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @objets.each do |objet| %>
+      <tr>
+        <td><%= objet.name %></td>
+        <td><%= objet.avatar %></td>
+        <td><%= objet.obj_type %></td>
+        <td><%= objet.vie %></td>
+        <td><%= objet.force %></td>
+        <td><%= objet.xp %></td>
+        <td><%= button_to 'Afficher', objet, method: :get %></td>
+        <td><%= button_to 'Modifier', edit_objet_path(objet), method: :get %></td>
+        <td><%= button_to 'Supprimer', objet, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to 'Nouvel Item', new_objet_path, method: :get %>
+<%= button_to 'Retour accueil', home_path, method: :get %>

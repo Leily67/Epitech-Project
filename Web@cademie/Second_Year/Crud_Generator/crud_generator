@@ -1,0 +1,383 @@
+#!/usr/bin/php
+
+<?php
+// Récupération des arguments en ligne de commande
+
+// crud_generator -g entity my_CRUD_generator
+// crud_generator -g crud product
+
+$options = getopt('g:', ['entity:']);
+$type = $options['g'];
+$value = $argv[$argc - 1];
+
+if ($type == "crud") {
+    generateCrudFiles($value);
+} else if ($type == "entity") {
+    generateEntityFile($value);
+} else {
+    echo "Error\n";
+}
+
+// ENTITY
+
+// génère une entité en posant des questions à l'utilisateur
+function generateEntityFile($dbName) {
+    
+    // Onrécupère le nom de l'entité
+    $entityName = ask("=> Quel est le nom de l'entité que vous voulez créer ?");
+    
+
+    // On récupère les informations des champs de l'entité
+    $needToAskField = true;
+    $fields = [];
+    while ($needToAskField == true) {
+    
+        // Onrécupère les informations d'un champs de l'entité
+        $field = askField($entityName);
+
+        // Si field == true alors l'utilisateur a écrit done  
+        if ($field === true) {
+
+            // On continue la génération
+            $needToAskField = false;
+
+        // Sinon field est un champs valide
+        } else {
+            
+            // On l'ajoute à la liste
+            $fields[] = $field;
+        
+        }
+
+    }
+
+    $entityName = strtolower($entityName);
+    $tableName = strtolower($entityName)."s";
+    $modelName = ucfirst($entityName);
+    $fileName = ucfirst($entityName).".php";
+
+    writeEntityFile($dbName, $entityName, $modelName, $fileName, $fields);
+    writeEntityMigration($dbName, $tableName, $fields);
+
+    echo "=> Entité ".$entityName." créée dans ".$dbName." avec les champs :";
+  
+    foreach ($fields as $field) {
+        echo " ".$field["name"]." (".$field["type"].")";
+    }
+    
+    echo ".\n";
+    echo "\t=> Table ".$tableName." créée dans la base de données ".$dbName.".\n";
+    echo "\t=> Model ".$modelName." créé dans ".$fileName."\n";
+}
+
+// Pose des question concernant un champs de l'entité
+function askField($entityName) {
+    // On récupère le nom du nouveau champs
+    $fieldName = ask("Quel est le nom du nouveau champ à ajouter à l'entité ".$entityName." ? (Tapez \"done\" pour arrêter d'ajouter des champs et générer l'entité)");
+
+    if ($fieldName === "done") {
+        return true;
+    }
+
+    // On récupère le type du nouveau champs
+    $fieldType = ask("Quel est le type du champ ".$fieldName." ? (string || integer) (string par défaut)");
+    while (!($fieldType === "" || $fieldType === "string" || $fieldType === "integer")) {
+        $fieldType = ask("Quel est le type du champ ".$fieldName." ? (string || integer) (string par défaut)");
+    }
+    if ($fieldType === "") {
+        $fieldType = "string";
+    }
+
+    // On retourne les infos récup 
+    return array("type" => $fieldType, "name" => $fieldName);
+}
+
+// pose une question en sautant une ligne 
+function ask($question) {
+    echo $question."\n";
+    return readline();
+}
+
+// écrit dans un fichier le contenu de l'entité en php
+function writeEntityFile($dbName, $entityName, $modelName, $fileName, $fields) {
+    // entityName: product
+    // modelName: Product
+    // fileName: Product.php
+    // fields: [{name: "name", type: "string"}, {name: "price", type: "integer"}]
+
+    $entityContent = "<?php\n\n";
+    $entityContent .= "\$db = new PDO('mysql:host=localhost;dbname=$dbName;charset=utf8', 'USERNAME', 'PASSWORD');\n\n";
+    $entityContent .= "class $modelName {\n";
+    $entityContent .= "\tprivate int \$id;\n";
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        if($field['type'] == "string"){
+            $fieldType = "string";
+        }else{
+            $fieldType = "int";
+        }
+        $entityContent .= "\tprivate $fieldType \$$fieldName;\n";
+    }
+    $entityContent .= "\n";
+
+    $entityContent .= "\tfunction __construct(";
+
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $entityContent .= "$fieldType \$$fieldName, ";
+    }
+    $entityContent = rtrim($entityContent, ", ");
+    $entityContent.= ") {\n";
+
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $entityContent .= "\t\t\$this->$fieldName = \$$fieldName;\n";
+    }
+    
+    $entityContent .= "\t}\n\n";
+
+    // SAVE
+    
+    $entityContent .= writeEntitySave($entityName, $entityName."s", $modelName, $fields);
+
+    // INDEX
+
+    $entityContent .= writeEntityIndex($entityName, $entityName."s", $modelName, $fields);
+
+    // SHOW
+
+    $entityContent .= writeEntityShow($entityName, $entityName."s", $modelName, $fields);
+
+    // LOAD
+
+    $entityContent .= writeEntityLoad($entityName, $entityName."s", $modelName, $fields);
+
+    // DELETE
+
+    $entityContent .= writeEntityDelete($entityName, $entityName."s", $modelName, $fields);
+
+    $entityContent .= "}\n";
+    
+    if (!file_exists("$entityName")) {
+        mkdir("$entityName", 0777, true);
+    }
+
+    file_put_contents("$entityName/$fileName", $entityContent);
+}
+
+function writeEntitySave($entityName, $entitiesName, $modelName, $fields) {
+    $content = "\tpublic function save() {\n";
+    $content .= "\t\tglobal \$db;\n\n";
+    $content .= "\t\t\$sql = \"INSERT INTO $entitiesName (";
+
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $content .= "$fieldName, ";
+    }
+    $content = rtrim($content, ", ");
+
+    $content .= ") VALUES (";
+    
+    foreach ($fields as $field) {
+        $content .= "?, ";
+    }
+    $content = rtrim($content, ", ");
+
+    $content .= ")\";\n";
+    $content .=  "\t\t\$query = \$db->prepare(\$sql);\n";
+    $content .=  "\t\t\$query->execute([";
+
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $content .= "\$this->$fieldName, ";
+    }
+    $content = rtrim($content, ", ");
+
+    $content .=  "]);\n";
+    $content .=  "\t\t\$this->id = \$db->lastInsertId();\n";
+    $content .= "\t}\n\n";
+    return $content;
+}
+
+
+function writeEntityIndex($entityName, $entitiesName, $modelName, $fields) {
+        
+    $content = "\tpublic static function index() {\n";
+    $content .= "\t\tglobal \$db;\n\n";
+    $content .= "\t\t\$sql = \"SELECT * FROM $entitiesName\";\n";
+    $content .= "\t\t\$query = \$db->prepare(\$sql);\n";
+    $content .= "\t\t\$query->execute();\n";
+    $content .= "\t\t\$results = \$query->fetchAll();\n";
+    $content .= "\t\t\n";
+    $content .= "\t\t\$$entitiesName = [];\n";
+    $content .= "\t\tforeach(\$results as \$result){\n";
+    $content .= "\t\t\t\$$entityName = new $modelName(";
+    
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $content .= "\$result['$fieldName'], ";
+    }
+    $content = rtrim($content, ", ");
+
+    $content .= ");\n";
+    $content .= "\t\t\t\$$entityName"."->id = \$result['id'];\n";
+    $content .= "\t\t\t\$$entitiesName"."[] = \$$entityName;\n";
+    $content .= "\t\t}\n";
+    $content .= "\t\t\n";
+    $content .= "\t\treturn \$$entityName;\n";
+    $content .= "\t}\n\n";
+    return $content;
+}
+
+function writeEntityShow($entityName, $entitiesName, $modelName, $fields) {
+    $content = "\tpublic static function show(\$id) {\n";
+    $content .= "\t\tglobal \$db;\n";
+    $content .= "\t\t\n";
+    $content .= "\t\t\$sql = \"SELECT * FROM $entitiesName WHERE id=?\";\n";
+    $content .= "\t\t\$query = \$db->prepare(\$sql);\n";
+    $content .= "\t\t\$query->execute([\$id]);\n";
+    $content .= "\t\t\$result = \$query->fetch();\n";
+    $content .= "\t\t\n";
+    $content .= "\t\t\$$entityName = new $modelName(";
+    
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $content .= "\$result['$fieldName'], ";
+    }
+    $content = rtrim($content, ", ");
+
+    $content .= ");\n";
+    $content .= "\t\t\$$entityName"."->id = \$result['id'];\n";
+    $content .= "\t\t\n";
+    $content .= "\t\treturn \$$entityName;\n";
+    $content .= "\t}\n\n";
+    return $content;
+}
+
+function writeEntityLoad($entityName, $entitiesName, $modelName, $fields) {
+    $content = "\tpublic function load(\$id) {\n";
+    $content .= "\t\tglobal \$db;\n";
+    $content .= "\t\t\n";
+    $content .= "\t\t\$sql = \"UPDATE $entitiesName SET ";
+
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $content .= "$fieldName=?, ";
+    }
+    $content = rtrim($content, ", ");
+
+    $content .= " WHERE id=?\";\n";
+    $content .= "\t\t\$query = \$db->prepare(\$sql);\n";
+    $content .= "\t\t\$query->execute(["; 
+
+    foreach ($fields as $field) {
+        $fieldName = $field['name'];
+        $content .= "\$this->$fieldName, ";
+    }
+
+    $content .= "\$id]);\n";
+    $content .= "\t\t\$this->id = \$id;\n";
+    $content .= "\t}\n\n";
+    return $content;
+}
+
+function writeEntityDelete($entityName, $entitiesName, $modelName, $fields) {
+    $content = "\tpublic function delete() {\n";
+    $content .= "\t\tglobal \$db;\n";
+    $content .= "\t\t\n";
+    $content .= "\t\t\$sql = \"DELETE FROM $entitiesName WHERE id=?\";\n";
+    $content .= "\t\t\$query = \$db->prepare(\$sql);\n";
+    $content .= "\t\t\$query->execute([\$this->id]);\n";
+    $content .= "\t}\n";
+    return $content;
+}
+
+// écrit dans le fichier migration.sql la création de l'entité
+function writeEntityMigration($dbName, $tableName, $fields) {
+
+    $migrationContent = "USE $dbName;\n";
+    $migrationContent .= "CREATE TABLE IF NOT EXISTS $tableName (\n";
+
+    // ajoute les colonnes
+    foreach ($fields as $field){
+        $columnName = $field['name'];
+        if($field['type'] == "string"){
+            $columnType = "TEXT";
+        }else{
+            $columnType = "INT";
+        }
+        $migrationContent .= "    $columnName $columnType,\n";
+    }
+
+        // Ajoute la clé primaire (si nécessaire)
+        $migrationContent .= "    id INT AUTO_INCREMENT PRIMARY KEY\n";
+
+        $migrationContent .= ");";
+        $fileContent = $migrationContent . "\n";
+        // Écrit le contenu dans le fichier migration.sql
+        file_put_contents('migration.sql', $fileContent, FILE_APPEND);
+}
+
+// CRUD
+
+function generateCrudFiles($entityName){
+
+    if (!file_exists("$entityName")) {
+        mkdir("$entityName", 0777, true);
+    }
+        
+    $entityName = strtolower($entityName);
+    $entitiesName = $entityName."s";
+    $modelName = ucfirst($entityName);
+    $fileName = ucfirst($entityName).".php";
+
+    file_put_contents("$entityName/list.view.php", writeCrudListView($entityName, $entitiesName, $modelName, $fileName));
+    file_put_contents("$entityName/show.view.php", writeCrudShowView($entityName, $entitiesName, $modelName, $fileName));
+    file_put_contents("$entityName/new.php", writeCrudNewView($entityName, $entitiesName, $modelName, $fileName));
+    file_put_contents("$entityName/edit.php", writeCrudEditView($entityName, $entitiesName, $modelName, $fileName));
+    echoCrudSummary($entityName);
+}
+
+function echoCrudSummary($entityName){
+    echo "=> Les fichiers suivants ont été créés :\n";
+    echo "\t- $entityName/list.view.php\n";
+    echo "\t- $entityName/show.view.php\n";
+    echo "\t- $entityName/new.php\n";
+    echo "\t- $entityName/edit.php\n";
+    echo "=> Ces fichiers sont accessibles aux URL suivantes :\n";
+    echo "\t- localhost/$entityName/list\n";
+    echo "\t- localhost/$entityName/show?id=xx\n";
+    echo "\t- localhost/$entityName/new\n";
+    echo "\t- localhost/$entityName/edit?id=xx\n";
+}
+
+function writeCrudListView($entityName, $entitiesName, $modelName, $fileName) {
+    $content = "<?php\n\n";
+    $content .= "require('$fileName');\n\n";
+    $content .= "\$$entitiesName = $modelName::index();\n";
+    return $content;
+}
+
+function writeCrudShowView($entityName, $entitiesName, $modelName, $fileName) {
+    $content = "<?php\n\n";
+    $content .= "require('$fileName');\n\n";
+    $content .= "\$$entityName = $modelName::show(ID);\n";
+    return $content;    
+}
+
+function writeCrudNewView($entityName, $entitiesName, $modelName, $fileName) {
+    $content = "<?php\n\n";
+    $content .= "require('$fileName');\n\n";
+    $content .= "\$$entityName = new $modelName(ARGS);\n";
+    $content .= "\$$entityName"."->save();\n";
+
+    return $content;
+}
+
+function writeCrudEditView($entityName, $entitiesName, $modelName, $fileName) {
+    $content = "<?php\n\n";
+    $content .= "require('$fileName');\n\n";
+    $content .= "\$$entityName = new $modelName(ARGS);\n";
+    $content .= "\$$entityName"."->load(ID);\n";
+    return $content;
+}
