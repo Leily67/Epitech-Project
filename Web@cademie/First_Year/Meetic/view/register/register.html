@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MEAT-HIC</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="../main_reg.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="/view/assets/oui-hipsfinal2.png" alt="sss">
+    </div>
+    <div id="card">
+        <div id="card-content">
+            <div id="card-title">
+                <h2>INSCRIPTION</h2>
+                <div class="underline-title"></div>
+            </div>
+            <form method="post" class="form">
+                <label for="fname" style="padding-top:13px">Nom :</label>
+                <input type="text" class="form-content" id="last_name" name="fuser_name" required>
+                <div class="form-border"></div>
+                <label for="lname" style="padding-top:13px">Prénom :</label>
+                <input type="text" class="form-content" id="first_name" name="luser_name" required>
+                <div class="form-border"></div>
+
+                <label for="bday" style="padding-top:13px">Date de naissance :</label>
+                <input type="date" class="form-content" id="birthday" name="user_bday" required>
+                <div class="form-border"></div>
+                <label for="gender" style="padding-top:13px">Genre :</label>
+                <div><input type="radio" id="gender_radio" name="user_gender">
+                    <label for="gender_men" style="padding-top:13px">Homme</label>
+                    <input type="radio" class="form-content" name="user_gender">
+                    <label for="gender_wom">Femme</label>
+                    <input type="radio" name="user_gender">
+                    <label for="gender_other">Autre</label></div>
+                <label for="city" style="padding-top:13px">Ville</label>
+                <input type="text" class="form-content" id="city" name="user_city" required>
+                <div class="form-border"></div>
+                <label for="mail" style="padding-top:13px">Email :</label>
+                <input type="email" class="form-content" id="mail" name="user_email" required>
+                <div class="form-border"></div>
+                <label for="password" style="padding-top:13px">Mot de passe :</label>
+                <input type="password" class="form-content" id="password" name="user_password" minlength="8" required>
+                <div class="form-border"></div>
+                <label for="hobby" style="padding-top:13px">Loisirs : (choix multiple)</label>
+                <div><input type="checkbox" id="hobby_red_vine" name="red_vine">
+                    <label for="red_vine">Vin Rouge</label></div>
+                <div><input type="checkbox" id="hobby_white_vine" name="white_vine">
+                    <label for="white_vine">Vin blanc</label></div>
+                <div><input type="checkbox" id="hobby_pink_vine" name="pink_vine">
+                    <label for="pink_vine">Rosé</label></div>
+                <div><input type="checkbox" id="hobby_beer" name="beer">
+                    <label for="beer">Bière</label></div>
+                <div><input type="checkbox" id="hobby_meat" name="meat">
+                    <label for="meat">Carnivore</label></div>
+                <div><input type="checkbox" id="hobby_vegan" name="vegan">
+                    <label for="vegan">Vegan</label></div>
+                <div><input type="checkbox" id="hobby_red_meat" name="redmeat">
+                    <label for="redmeat">Viande rouge</label></div>
+                <div><input type="checkbox" id="hobby_white_meat" name="whitemeat">
+                    <label for="whitemeat">Viande blanche</label></div>
+                <div><input type="checkbox" id="hobby_fish" name="fish">
+                    <label for="fish">Poisson</label></div>
+                <input onclick="window.location.href='/members.html'" id="submit_btn" type="button" name="submit" value="ENVOYER" />
+
+            </form>
+        </div>
+    </div>
+    <script src="./register.js"></script>
+</body>
+
+</html>

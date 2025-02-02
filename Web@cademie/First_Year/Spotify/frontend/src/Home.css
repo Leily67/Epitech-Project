@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+
+    background-color: black;
+    font-family: montserrat, arial, verdana;
+}
+
+.home2 {
+
+    color: white;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 170px;
+    text-decoration: none;
+}
+
+a:link {
+
+    color:white;
+    text-decoration: none;
+}
+
+a:visited {
+
+    color: white;
+    text-decoration: none;
+}
+
+.img {
+
+        background-image: url(./img.png);
+}
+      

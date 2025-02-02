@@ -1,0 +1,47 @@
+body{
+    background-color: goldenrod;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 1%;
+}
+
+.gras,
+.italique,
+.barré,
+.lien,
+.plus,
+.minus,
+.gauche,
+.droite,
+.centré,
+.justifié,
+.générer,
+.enregistrer {
+    width: 4%;
+}
+
+textarea {
+    border: 2px solid black !important;
+}
+
+img {
+    width: 25%;
+}
+
+.wysiwyg {
+    text-align: center;
+}
+
+.editor {
+    background-color: white;
+    margin: 0 auto;
+    width: 1000px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: left;
+}
