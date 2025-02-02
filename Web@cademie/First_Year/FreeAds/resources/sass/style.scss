@@ -1,0 +1,128 @@
+body{
+    background-color:rgba(255,140,0 ,0.1);
+}
+
+.nav-link{
+    color : darkorange!important;
+}
+
+#title_article,h2{
+    font-size : 20px
+}
+
+h3,h2,h1{
+    font-weight: bold;
+    color : darkorange;
+}
+h3{
+    font-size : 15px;
+}
+
+#user_article{
+    font-weight: bold;
+    color : dimgrey;
+}
+
+.span_info,label{
+    color: darkorange;
+    font-weight: bold;
+}
+
+button{
+    background-color:rgba(255,140,0 ,0.5);
+    border : solid darkorange 1px;
+    border-radius : 5px;
+}
+
+button:hover{
+    background-color:rgba(255,140,0 ,1);
+    color : white;
+    font-weight: bold;
+}
+
+ul>li{
+    list-style: none;
+}
+
+#newArticle{
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+#newArticle>li>a{
+    color: darkorange!important;
+    font-size: 20px;
+}
+
+#newArticle>li>a:hover{
+    font-weight: bold!important;
+    color: #e07a00 !important;
+    text-decoration: none;
+}
+
+.orderBy{
+    color: darkorange;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.order{
+    font-weight: bold!important;
+    //font-size: 20px;
+    color:orangered!important;
+}
+
+button{
+    margin : 10px;
+}
+
+.header_container {
+    background-image: url("../../public/image/people.jpg");
+    margin: 0 0 100px;
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seeMore{
+    border-color: white!important;
+}
+
+.seeMore:hover{
+    background-color: darkorange!important;
+}
+
+.seeMore>a{
+    color: darkorange!important;
+
+}
+
+.seeMore>a:hover{
+    color: white!important;
+    font-weight: bold ;
+}
+
+.isme {
+    border: solid 1px darkorange;
+    border-radius: 3px;
+    background-color: rgba(255,140,0 ,0.1 );
+    margin: 10px 0 10px 0;
+    padding: 17px 0 17px 54px;
+}
+
+.notme {
+    border: solid 1px darkgrey;
+    border-radius: 3px;
+    background-color: rgb(255,255,255,0.4);
+    margin: 10px 0 10px 0;
+    padding: 17px 0 17px 54px;
+}
+
+.strong{
+    font-weight: bold;
+    line-height: 70px;
+    font-size:15px;
+}

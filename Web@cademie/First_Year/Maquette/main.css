@@ -1,0 +1,368 @@
+#menu a, #snd_plan h2, #thd_plan h3 {
+    text-transform: uppercase;
+}
+
+.adresse, .email, .support, .tel {
+    background-repeat: no-repeat;
+}
+
+#menu a, #snd_plan a, .lien a {
+    text-decoration: none;
+    text-align: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#snd_plan a, #snd_plan span, .billet a, .slogan p {
+    font-style: italic;
+    font-family: "Oswald", sans-serif;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-image: url(misc/grille.png);
+    font-family: "Oswald", sans-serif;
+}
+
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#first_plan {
+    color: #969696;
+    width: 940px;
+    margin: auto;
+    min-height: 180px;
+}
+
+h1 {
+    padding-top: 40px;
+}
+
+#menu .activites .title_menu+li, #menu .hotel .title_menu+li, #menu .plus .title_menu+li, #menu .restaurants .title_menu+li, #menu .services .title_menu+li {
+    padding-top: 10px;
+}
+
+#menu {
+    float: right;
+    width: 720px;
+    min-height: 100px;
+    margin-top: -100px;
+}
+
+#menu div {
+    float: left;
+    padding-left: 30px;
+}
+
+#menu a {
+    font-weight: 700;
+    font-size: 15.84px;
+    color: #969696;
+}
+
+#menu .title_menu {
+    border-bottom: 5px solid;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+#menu .activites li, #menu .hotel li, #menu .plus li, #menu .restaurants li, #menu .services li {
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+#menu .hotel .title_menu {
+    border-color: #f76900;
+    font-size: 16px;
+}
+
+#menu .hotel li {
+    font-size: 12.8px;
+}
+
+#menu .restaurants .title_menu {
+    border-color: #fcd04a;
+    font-size: 16px;
+}
+
+#menu .restaurants li {
+    font-size: .8em;
+}
+
+#menu .services .title_menu {
+    border-color: #b9d482;
+    font-size: 16px;
+}
+
+#menu .services li {
+    font-size: .8em;
+}
+
+#menu .activites .title_menu {
+    border-color: #3d92c2;
+    font-size: 16px;
+}
+
+#menu .activites li {
+    font-size: .8em;
+}
+
+#menu .plus .title_menu {
+    border-color: #c078d0;
+    font-size: 16px;
+}
+
+#snd_plan, .slogan, .youtube {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+#snd_plan, .slogan p, object {
+    padding-top: 30px;
+}
+
+#menu .plus li {
+    font-size: .8em;
+}
+
+.espace {
+    background-color: #fff;
+    width: 100%;
+    height: 10px;
+}
+
+.youtube {
+    background-color: #fff;
+    border-top: 1px solid #e1e1e1;
+}
+
+object {
+    padding-bottom: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+    height: 390px;
+}
+
+.slogan {
+    margin-top: 10px;
+    min-height: 85px;
+}
+
+.slogan p {
+    text-align: center;
+    font-size: 16px;
+    color: #969696;
+}
+
+.slogan .espace {
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+#snd_plan {
+    background-color: #fff;
+    padding-bottom: 130px;
+}
+
+.golf, .images img {
+    border: 1px solid #c8c8c8;
+}
+
+#article {
+    width: 940px;
+    margin: auto;
+}
+
+#snd_plan h2 {
+    font-size: 1.5em;
+    color: #f76900;
+}
+
+#snd_plan span {
+    font-size: .8em;
+    color: #c8c8c8;
+}
+
+#snd_plan p {
+    color: #c8c8c8;
+    font-size: .7em;
+    font-family: "Oswald", sans-serif;
+    width: 180px;
+}
+
+#snd_plan a {
+    color: #c8c8c8;
+}
+
+.golf {
+    width: 220px;
+    padding-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.accrobranche {
+    float: right;
+    margin-top: -265px;
+    margin-right: 485px;
+}
+
+.fast_foods {
+    float: right;
+    margin-top: -115px;
+    margin-right: 510px;
+}
+
+.comment {
+    float: right;
+    margin-top: -265px;
+    margin-right: 270px;
+}
+
+.images {
+    float: right;
+    margin-top: -140px;
+    margin-left: 465px;
+}
+
+.images img {
+    padding: 10px;
+    margin: 5px;
+}
+
+#thd_plan {
+    min-height: 220px;
+    width: 940px;
+    margin: auto;
+}
+
+#thd_plan h3 {
+    font-size: 1.1em;
+    color: #969696;
+    padding-bottom: 20px;
+}
+
+#thd_plan p .date {
+    font-size: .8em;
+    font-style: italic;
+    font-family: "Oswald", sans-serif;
+    color: #c8c8c8;
+}
+
+#thd_plan p span {
+    font-weight: 700;
+    color: #000;
+    font-family: "Oswald", sans-serif;
+    font-size: .8em;
+}
+
+.contact a, .contact p {
+    color: #afafaf;
+}
+
+.contact {
+    margin: auto 0;
+    padding-top: 30px;
+    max-width: 185px;
+}
+
+.billet, .blabla, .dernier_com {
+    margin-top: -165px;
+    float: right;
+}
+
+.contact p {
+    font-size: 1;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.adresse {
+    background-image: url(misc/accueil_icone.png);
+}
+
+.tel {
+    background-image: url(misc/telephone_icone.png);
+}
+
+.email {
+    background-image: url(misc/mail_icone.png);
+}
+
+.support {
+    background-image: url(misc/aide_icone.png);
+}
+
+.billet {
+    margin-right: 505px;
+    max-width: 200px;
+}
+
+.billet a {
+    text-transform: none;
+    color: #c8c8c8;
+}
+
+.dernier_com {
+    margin-right: 215px;
+    max-width: 240px;
+}
+
+.blabla {
+    max-width: 190px;
+}
+
+#footer #contenu, #footer .lien {
+    width: 940px;
+    margin: auto;
+}
+
+#footer {
+    border-top: 1px solid #e1e1e1;
+    min-height: 115px;
+    background-color: #fff;
+}
+
+#footer .lien {
+    padding-top: 25px;
+    color: #969696;
+    margin-left: 10px;
+}
+
+.lien a {
+    padding-right: 10px;
+    color: #969696;
+    text-align: center;
+}
+
+#footer .vignette {
+    float: right;
+    margin-bottom: 20px;
+}
+.dark {
+    background-color: #112F41;
+    color: #ffffff;
+  }
+  
+  .dark button {
+    background: #144098;
+    color: #fff;
+  }

@@ -1,0 +1,1 @@
+<div><img src="../webroot/assets/404.jpg"></div>
