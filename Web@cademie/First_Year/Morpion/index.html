@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="grid"></div>
+    <button id="restart">Rejouer</button>
+    <div id="scoreboard">
+        <h2>Tableau des scores</h2>
+        <p>Joueur X: <span id="score-x">0</span></p>
+        <p>Joueur O: <span id="score-o">0</span></p>
+    </div>
+
+    <script type="module">
+        import { Morpion } from './modules/morpion.js';
+
+        const gridElement = document.querySelector('#grid');
+        const restartButton = document.querySelector('#restart');
+        const scoreXElement = document.querySelector('#score-x');
+        const scoreOElement = document.querySelector('#score-o');
+
+        const morpion = new Morpion(gridElement, scoreXElement, scoreOElement);
+
+        restartButton.addEventListener('click', () => {
+            morpion.init();
+        });
+    </script>
+</body>
+</html>
