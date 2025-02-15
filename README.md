@@ -20,19 +20,33 @@
 
 | Project Folder | Language/Technos | Description |
 | ------------- | --------------- | ----------- |
-| [PHP Pool](./Web@cademie/First_Year/PHP_Pool) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Shell and PHP basics. |
-| [SQL Exam](./Web@cademie/First_Year/Sql_Exam) | MySQL | Mini exam in SQL <br> Exercises designed to assess SQL query skills and database management concepts. |
-| [BattleShip](./Web@cademie/First_Year/Battleship) | HTML/CSS/JS | Classic Battleship game implementation in web browser |
-| [Cinema](./Web@cademie/First_Year/Cinema) | PHP/MySQL | Cinema booking system with database management |
-| [Meetic](./Web@cademie/First_Year/Meetic) | PHP/MySQL/JS | Dating website clone with user profiles and matching |
-| [RacingJS](./Web@cademie/First_Year/RacingJS) | JavaScript | Browser-based racing game using vanilla JavaScript |
-| [Puissance 4](./Web@cademie/First_Year/Puissance_4) | HTLM/CSS/JS | Connect Four game implementation with multiplayer |
-| [Spotify](./Web@cademie/First_Year/Spotify) | PHP/MySQL/JS | Music streaming platform clone |
-| [Tweet Academie](./Web@cademie/First_Year/Tweet_Academie) | PHP/MySQL | Twitter-like social media platform |
-| [Wysiwyg](./Web@cademie/First_Year/Wysiwyg) | JavaScript | What You See Is What You Get text editor |
+| [PHP Pool](./Web@cademie/First_Year/PHP_Pool) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Shell and PHP basics |
+| [SQL Exam](./Web@cademie/First_Year/Sql_Exam) | MySQL | Mini exam in SQL <br> Exercises designed to assess SQL query skills and database management concepts |
+| [BattleShip](./Web@cademie/First_Year/Battleship) | HTML/CSS/JS | Battleship game in JavaScript <br> Implementation of the famous game with web interface |
+| [Cinema](./Web@cademie/First_Year/Cinema) | PHP/MySQL | Cinema reservation website <br> Manage films, screenings and reservations |
+| [Meetic](./Web@cademie/First_Year/Meetic) | PHP/MySQL | Dating site clone <br> Matchmaking system and messaging between users |
+| [RacingJS](./Web@cademie/First_Year/RacingJS) | JavaScript | Series of JavaScript exercises <br> DOM manipulation and advanced functionalities |
+| [Puissance 4](./Web@cademie/First_Year/Puissance_4) | HTML/CSS/JS | Puissance 4 game <br> Implementation of the game with multiplayer mode |
+| [Spotify](./Web@cademie/First_Year/Spotify) | PHP/MySQL/JS | Spotify clone <br> Music streaming platform with playlist management |
+| [Tweet Academy](./Web@cademie/First_Year/Tweet_Academie) | PHP/MySQL | Twitter clone <br> Social network with tweets, follows and messaging |
+| [Wysiwyg](./Web@cademie/First_Year/Wysiwyg) | JavaScript | WYSIWYG text editor <br> Real-time rich text editing interface |
 <br>
 
 ## Web@cademie Second Year
+
+| Project Folder | Language/Technos | Description |
+| ------------- | --------------- | ----------- |
+| [Bugs Quest](./Web@cademie/Second_Year/Bugs_Quest) | Ruby | RPG <br> RPG-style game |
+| [Crud Generator](./Web@cademie/Second_Year/Crud_Generator) | PHP/MySQL | Creation of an automated CRUD generator |
+| [Enigma](./Web@cademie/Second_Year/Enigma) | Cryptographie | Implementation of encryption algorithms |
+| [HTML Gaming](./Web@cademie/Second_Year/HTML_Gaming) | HTML/CSS/JavaScript | Game <br> Creation of a space invaders platform game |
+| [Microservice](./Web@cademie/Second_Year/Microservice) | PHP/Slim | Chat <br> Creating a chat using the Slim Framework |
+| [PFE](./Web@cademie/Second_Year/PFE) | React Native/Expo/Nest | End of study project <br> Mobile application for weight management, diet and exercise |
+| [Vardump](./Web@cademie/Second_Year/Vardump) | PHP | Algo <br> Creating a feature with the same behaviour as "var_dump |
+| [WacKeep](./Web@cademie/Second_Year/WacKeep) | PHP | Google Keep <br> Creation of a website with the same functionalities as the ‘Google Keep’ tool. |
+| [Wacdoc](./Web@cademie/Second_Year/Wacdoc) | PHP | Google Doc <br> Creation of a website with the same functionalities as the ‘Google doc’ tool. |
+| [Wackemon](./Web@cademie/Second_Year/Wackemon) | JavaScript/API | Pokedex <br> Pokémon clone with PokeAPI integration |
+<br>
 
 
 ## Pré MSc
