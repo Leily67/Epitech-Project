@@ -30,6 +30,7 @@
 | [Spotify](./Web@cademie/First_Year/Spotify) | PHP/MySQL/JS | Spotify clone <br> Music streaming platform with playlist management |
 | [Tweet Academy](./Web@cademie/First_Year/Tweet_Academie) | PHP/MySQL | Twitter clone <br> Social network with tweets, follows and messaging |
 | [Wysiwyg](./Web@cademie/First_Year/Wysiwyg) | JavaScript | WYSIWYG text editor <br> Real-time rich text editing interface |
+| [BSQ](./Web@cademie/First_Year/BSQ) | PHP | Algo <br> Create an algorithm capable of finding the largest possible square between obstacles on a given plateau. |
 <br>
 
 ## Web@cademie Second Year
