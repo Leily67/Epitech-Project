@@ -18,18 +18,18 @@
 
 ## Web@cademie First Year
 
-| Project Folder                    | Language/Technos | Description |
-| --------------------------------  | - | -------------- |
-| [PHP Pool](./Web@cademie/First_Year/PHP_Pool) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Sheel and PHP basics. |
+| Project Folder | Language/Technos | Description |
+| ------------- | --------------- | ----------- |
+| [PHP Pool](./Web@cademie/First_Year/PHP_Pool) | PHP | EPITECH PHP Pool <br> 3 weeks of intense programming to learn Shell and PHP basics. |
 | [SQL Exam](./Web@cademie/First_Year/Sql_Exam) | MySQL | Mini exam in SQL <br> Exercises designed to assess SQL query skills and database management concepts. |
-| [BattleShip] | / | soon... |
-| [Cinema] | / | soon... |
-| [Meetic] | / | soon... |
-| [RacingJS] | / | soon... |
-| [Puissance 4] | / | soon... |
-| [Spotify] | / | soon... |
-| [Tweet Academy] | /| soon... |
-| [Wysiwyg] | / | soon... |
+| [BattleShip](./Web@cademie/First_Year/Battleship) | HTML/CSS/JS | Classic Battleship game implementation in web browser |
+| [Cinema](./Web@cademie/First_Year/Cinema) | PHP/MySQL | Cinema booking system with database management |
+| [Meetic](./Web@cademie/First_Year/Meetic) | PHP/MySQL/JS | Dating website clone with user profiles and matching |
+| [RacingJS](./Web@cademie/First_Year/RacingJS) | JavaScript | Browser-based racing game using vanilla JavaScript |
+| [Puissance 4](./Web@cademie/First_Year/Puissance_4) | HTLM/CSS/JS | Connect Four game implementation with multiplayer |
+| [Spotify](./Web@cademie/First_Year/Spotify) | PHP/MySQL/JS | Music streaming platform clone |
+| [Tweet Academie](./Web@cademie/First_Year/Tweet_Academie) | PHP/MySQL | Twitter-like social media platform |
+| [Wysiwyg](./Web@cademie/First_Year/Wysiwyg) | JavaScript | What You See Is What You Get text editor |
 <br>
 
 ## Web@cademie Second Year
@@ -37,15 +37,15 @@
 
 ## Pré MSc
 
-| Project Folder                    | Language/Technos | Description |
-| --------------------------------  | - | -------------- |
-| [Pool](./MSc_Pro/PreMSc/Pool) | PHP/JAVA/MANAGEMENT | soon... |
-| [IRC](./MSc_Pro/PreMSc/IRC) | Express/NextJS | soon... |
-| [Marvin](./MSc_Pro/PreMSc/Marvin) | Jenkins | soon... |
-| [Popeye](./MSc_Pro/PreMSc/Popeye) | Docker | soon... |
-| [Bernstein](./MSc_Pro/PreMSc/Bernstein) | Kubernet | soon... |
-| [TrollQuest](./MSc_Pro/PreMSc/TrollQuest) | API Trello/TypeScript | soon... |
-| [Ecommerce](./MSc_Pro/PreMSc/Ecommerce) | Symfony/NextJS | soon... |
-| [CyberSecu](./MSc_Pro/PreMSc/CyberSecu) | / | soon... |
+| Project Folder | Language/Technos | Description |
+| ------------- | --------------- | ----------- |
+| [Pool](./MSc_Pro/PreMSc/Pool) | PHP/JAVA/MANAGEMENT | Introduction to programming and management <br> 3 weeks of intensive programming in PHP, Java and notions of project management |
+| [IRC](./MSc_Pro/PreMSc/IRC) | Express/NextJS | Creation of an IRC chat server <br> Real-time instant messaging application |
+| [Marvin](./MSc_Pro/PreMSc/Marvin) | Jenkins | Setting up a continuous integration chain <br> Configuration and automation with Jenkins |
+| [Popeye](./MSc_Pro/PreMSc/Popeye) | Docker | Application containerisation <br> Application deployment with Docker and Docker Compose |
+| [Bernstein](./MSc_Pro/PreMSc/Bernstein) | Kubernetes | Container orchestration <br> Kubernetes cluster management and application deployment |
+| [TrollQuest](./MSc_Pro/PreMSc/TrollQuest) | API Trello/TypeScript | Integration with the Trello API <br> Development of a project management application |
+| [Ecommerce](./MSc_Pro/PreMSc/Ecommerce) | Symfony/NextJS | Full-stack e-commerce site <br> Symfony backend and NextJS frontend with shopping cart and payment management |
+| [CyberSecu](./MSc_Pro/PreMSc/CyberSecu) | Sécurité | Introduction to cyber security <br> Practical security exercises and pentesting |
 
 <br>
