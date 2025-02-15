@@ -3,7 +3,7 @@
 <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Epitech_Official_Logo.png" alt="Logo" width="600" height="150"/>
 </p>
-<p>Here are some of the projects I did during my studies at Epitech.<br></p>
+<p>Here are some of the projects I did during my studies at Epitech.<br>Not all projects are complete or functional</p>
 
 | Cursus | Promotion     | Description                       |
 | :-------- | :------- | :-------------------------------- |
